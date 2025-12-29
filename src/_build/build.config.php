@@ -6,20 +6,19 @@ define('PKG_EXTENDED', 'miniShop2');
 define('PKG_EXTENDED_LOWER', strtolower(PKG_EXTENDED));
 define('PKG_NAME_LOWER', strtolower(PKG_NAME));
 
-define('PKG_VERSION', '1.2.6');
+define('PKG_VERSION', '2.0.0');
 define('PKG_RELEASE', 'pl');
 define('PKG_AUTO_INSTALL', false);
 
-
-/* define paths */
 /* define paths */
 if (isset($_SERVER['MODX_BASE_PATH'])) {
     define('MODX_BASE_PATH', $_SERVER['MODX_BASE_PATH']);
-} elseif (file_exists(dirname(dirname(dirname(__FILE__))) . '/core')) {
-    define('MODX_BASE_PATH', dirname(dirname(dirname(__FILE__))) . '/');
+} elseif (file_exists(dirname(__FILE__, 3) . '/core/model/modx/modx.class.php')) {
+    define('MODX_BASE_PATH', dirname(__FILE__, 3) . '/');
 } else {
-    define('MODX_BASE_PATH', dirname(dirname(dirname(dirname(__FILE__)))) . '/');
+    define('MODX_BASE_PATH', dirname(__FILE__) . '/');
 }
+
 define('MODX_CORE_PATH', MODX_BASE_PATH . 'core/');
 define('MODX_MANAGER_PATH', MODX_BASE_PATH . 'manager/');
 define('MODX_CONNECTORS_PATH', MODX_BASE_PATH . 'connectors/');

@@ -1,7 +1,8 @@
 <?php
 /** @var modX $modx */
 
-use esas\hutkigrosh\utils\LoggerDefault;
+//use esas\cmsgate\hutkigrosh\utils\LoggerDefault;
+use esas\cmsgate\utils\Logger;
 
 switch ($modx->event->name) {
     // добавим автозагрузчик composer-а
@@ -10,6 +11,6 @@ switch ($modx->event->name) {
         if (file_exists($file)) {
             require_once $file;
         }
-        LoggerDefault::init(); // используем настройки по умолчанию для сохранения логов в безопасном каталоге
+        Logger::init(); // используем настройки по умолчанию для сохранения логов в безопасном каталоге
         break;
 }

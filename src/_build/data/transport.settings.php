@@ -9,7 +9,7 @@ if(!class_exists('EsasAutoloader')) {
     require_once dirname(dirname(dirname(__FILE__))) . '/core/components/minishop2/custom/payment/lib/EsasAutoloader.php';
 }
 
-use esas\hutkigrosh\ConfigurationFieldsModx;
+use esas\cmsgate\hutkigrosh\ConfigurationFieldsModx;
 
 $settings = array();
 $tmp = array(
@@ -26,6 +26,10 @@ $tmp = array(
         'value' => '',
     ),
     ConfigurationFieldsModx::ERIP_ID => array(
+        'xtype' => 'textfield',
+        'value' => '',
+    ),
+    ConfigurationFieldsModx::ERIP_PATH => array(
         'xtype' => 'textfield',
         'value' => '',
     ),
@@ -58,6 +62,10 @@ $tmp = array(
         'value' => '',
     ),
     ConfigurationFieldsModx::ALFACLICK_BUTTON => array(
+        'xtype' => 'combo-boolean',
+        'value' => 'false',
+    ),
+    ConfigurationFieldsModx::QR_CODE => array(
         'xtype' => 'combo-boolean',
         'value' => 'false',
     ),

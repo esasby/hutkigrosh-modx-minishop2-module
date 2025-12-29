@@ -41,8 +41,14 @@ $_lang['setting_ms2_msphutkigrosh_success_resource_id_desc'] = 'Resource id for 
 $_lang['setting_ms2_msphutkigrosh_failed_resource_id'] = 'Failed resource id';
 $_lang['setting_ms2_msphutkigrosh_failed_resource_id_desc'] = 'Resource id for user redirection if bill was not added';
 
-$_lang['setting_ms2_msphutkigrosh_alfaclick_button'] = 'Button Alfaclick';
-$_lang['setting_ms2_msphutkigrosh_alfaclick_button_desc'] = 'If "true" then custoer will get "Add to Alfaclick" button on success page';
+$_lang['setting_ms2_msphutkigrosh_qr_code'] = 'QR-code';
+$_lang['setting_ms2_msphutkigrosh_qr_code_desc'] = 'If "true" then custoer will get "QR-code" image on success page';
+
+$_lang['setting_ms2_msphutkigrosh_erip_path'] = 'ERIP PATH';
+$_lang['setting_ms2_msphutkigrosh_erip_path_desc'] = 'По какому пути клиент должен искать выставленный счет';
+
+//$_lang['setting_ms2_msphutkigrosh_alfaclick_button'] = 'Button Alfaclick';
+//$_lang['setting_ms2_msphutkigrosh_alfaclick_button_desc'] = 'If "true" then custoer will get "Add to Alfaclick" button on success page';
 
 $_lang['setting_ms2_msphutkigrosh_webpay_button'] = 'Button Webpay';
 $_lang['setting_ms2_msphutkigrosh_webpay_button_desc'] = 'If "true" then custoer will get "Pay with card" button on success page';
@@ -53,6 +59,7 @@ $_lang['setting_ms2_msphutkigrosh_due_interval_desc'] = 'How many days new bill 
 $_lang['hutkigrosh.webpay.msg.success'] = 'Webpay: payment completed!';
 $_lang['hutkigrosh.webpay.msg.failed'] = 'Webpay: payment failed!';
 $_lang['hutkigrosh.alfaclick.label'] = 'Add to Alfaclick';
+$_lang['hutkigrosh.qrcode.label'] = 'Add to QR-code';
 $_lang['hutkigrosh.alfaclick.msg.success'] = 'Bill was added to Alfaclick';
 $_lang['hutkigrosh.alfaclick.msg.failed'] = 'Can not add bill to Alfaclick';
 

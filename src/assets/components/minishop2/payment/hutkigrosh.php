@@ -1,8 +1,8 @@
 <?php
 
-use esas\hutkigrosh\wrappers\ConfigurationWrapperModxMinishop2;
-use esas\hutkigrosh\controllers\ControllerNotifyModxMinishop2;
-use esas\hutkigrosh\controllers\ControllerAlfaclick;
+use esas\cmsgate\hutkigrosh\wrappers\ConfigurationWrapperModxMinishop2;
+use esas\cmsgate\hutkigrosh\controllers\ControllerNotifyModxMinishop2;
+use esas\cmsgate\hutkigrosh\controllers\ControllerHutkigroshAlfaclick;
 
 if (!isset($modx)) {
     define('MODX_API_MODE', true);
@@ -15,7 +15,7 @@ $modx->error->message = null;
 
 switch ($_GET['action']) {
     case 'alfaclick':
-        $controller = new ControllerAlfaclick(new ConfigurationWrapperModxMinishop2($modx));
+        $controller = new ControllerHutkigroshAlfaclick(new ConfigurationWrapperModxMinishop2($modx));
         $controller->process($_REQUEST['bill_id'], $_REQUEST['phone']);
         break;
     case 'notify':

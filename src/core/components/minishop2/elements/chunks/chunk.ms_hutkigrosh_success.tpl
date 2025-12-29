@@ -1,4 +1,5 @@
 [[!$tpl.mspHutkigrosh.success.instructions? &order_number={$order_number}]]
+{$order_instruction|nofilter}
 <div id="hutkigrosh_buttons" class="">
     {if $webpay_button_enabled}
     {if $webpay_status and $webpay_status == 'payed'}
@@ -15,6 +16,11 @@
             var webpay_form_button = $('#webpay input[type="submit"]');
             webpay_form_button.addClass('btn btn-default btn-primary ms2_link');
         </script>
+    {/if}
+    {if $qr_code}
+        <div id="qr_code">
+            {$qr_details|nofilter}
+        </div>
     {/if}
     {if $alfaclick_button_enabled}
         <div id="alfaclick" class="ty-checkout-complete__buttons-right">

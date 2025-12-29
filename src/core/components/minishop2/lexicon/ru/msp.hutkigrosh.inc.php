@@ -41,8 +41,14 @@ $_lang['setting_ms2_msphutkigrosh_success_resource_id_desc'] = 'Идентифи
 $_lang['setting_ms2_msphutkigrosh_failed_resource_id'] = 'Идентификатор ресурса при ошибке';
 $_lang['setting_ms2_msphutkigrosh_failed_resource_id_desc'] = 'Идентификатор ресурса (resource id) для перехода в случае ошибки выставления счета.';
 
-$_lang['setting_ms2_msphutkigrosh_alfaclick_button'] = 'Кнопка Alfaclick';
-$_lang['setting_ms2_msphutkigrosh_alfaclick_button_desc'] = 'Если включена, то на итоговом экране клиенту отобразится кнопка для выставления счета в Alfaclick';
+$_lang['setting_ms2_msphutkigrosh_qr_code'] = 'QR-код';
+$_lang['setting_ms2_msphutkigrosh_qr_code_desc'] = 'Если включена, то на итоговом экране клиенту отобразится QR-код для оплаты';
+
+$_lang['setting_ms2_msphutkigrosh_erip_path'] = 'Путь в дереве ЕРИП';
+$_lang['setting_ms2_msphutkigrosh_erip_path_desc'] = 'По какому пути клиент должен искать выставленный счет';
+
+//$_lang['setting_ms2_msphutkigrosh_alfaclick_button'] = 'Кнопка Alfaclick';
+//$_lang['setting_ms2_msphutkigrosh_alfaclick_button_desc'] = 'Если включена, то на итоговом экране клиенту отобразится кнопка для выставления счета в Alfaclick';
 
 $_lang['setting_ms2_msphutkigrosh_webpay_button'] = 'Кнопка Webpay';
 $_lang['setting_ms2_msphutkigrosh_webpay_button_desc'] = 'Если включена, то на итоговом экране клиенту отобразится кнопка для оплаты счета картой (переход на Webpay)';
@@ -52,6 +58,7 @@ $_lang['setting_ms2_msphutkigrosh_due_interval_desc'] = 'Как долго сч�
 
 $_lang['hutkigrosh.webpay.msg.success'] = 'Счет успешно оплачен через WebPay';
 $_lang['hutkigrosh.webpay.msg.failed'] = 'Ошибка оплаты счета через WebPay';
+$_lang['hutkigrosh.qrcode.label'] = 'Оплатить через QR-code';
 $_lang['hutkigrosh.alfaclick.label'] = 'Выставить в Альфаклик';
 $_lang['hutkigrosh.alfaclick.msg.success'] = 'Счет успешно выставлен в систему Альфаклик';
 $_lang['hutkigrosh.alfaclick.msg.failed'] = 'Не удалось выставить счет в системе Альфаклик';

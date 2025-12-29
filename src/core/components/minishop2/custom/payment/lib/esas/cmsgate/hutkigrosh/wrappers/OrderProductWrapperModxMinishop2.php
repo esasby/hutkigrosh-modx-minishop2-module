@@ -6,10 +6,11 @@
  * Time: 17:08
  */
 
-namespace esas\hutkigrosh\wrappers;
+namespace esas\cmsgate\hutkigrosh\wrappers;
 
 
 use msOrderProduct;
+use esas\cmsgate\wrappers\OrderProductWrapper;
 
 class OrderProductWrapperModxMinishop2 extends OrderProductWrapper
 {

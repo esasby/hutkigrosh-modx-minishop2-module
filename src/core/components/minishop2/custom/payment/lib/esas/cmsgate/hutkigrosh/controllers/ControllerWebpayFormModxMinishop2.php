@@ -6,13 +6,13 @@
  * Time: 12:38
  */
 
-namespace esas\hutkigrosh\controllers;
+namespace esas\cmsgate\hutkigrosh\controllers;
 
 
-use esas\hutkigrosh\wrappers\ConfigurationWrapperModxMinishop2;
-use esas\hutkigrosh\wrappers\OrderWrapper;
+use esas\cmsgate\hutkigrosh\wrappers\ConfigurationWrapperModxMinishop2;
+use esas\cmsgate\wrappers\OrderWrapper;
 
-class ControllerWebpayFormModxMinishop2 extends ControllerWebpayForm
+class ControllerWebpayFormModxMinishop2 extends ControllerHutkigroshWebpayForm
 {
     private $modx;
 

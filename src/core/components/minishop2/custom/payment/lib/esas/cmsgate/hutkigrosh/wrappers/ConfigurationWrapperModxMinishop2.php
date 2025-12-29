@@ -1,19 +1,15 @@
 <?php
+namespace esas\cmsgate\hutkigrosh\wrappers;
 
-namespace esas\hutkigrosh\wrappers;
+use esas\cmsgate\hutkigrosh\ConfigFieldsHutkigrosh;
+use esas\cmsgate\hutkigrosh\ConfigurationFieldsModx;
+use esas\cmsgate\utils\Logger;
 
-use esas\hutkigrosh\ConfigurationFieldsModx;
-use modX;
+require_once( dirname(__FILE__, 6) . '\init.php');
 
-/**
- * Created by PhpStorm.
- * User: nikit
- * Date: 13.03.2018
- * Time: 14:44
- */
-class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
+class ConfigurationWrapperModxMinishop2 extends ConfigWrapperHutkigrosh
 {
-    /** @var modX $modx */
+
     public $modx;
 
     /**
@@ -24,6 +20,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
     {
         parent::__construct();
         $this->modx = $modx;
+        Logger::getLogger(get_class($this))->info("init");
     }
 
     /**
@@ -145,10 +142,19 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
         return $this->getOption(ConfigurationFieldsModx::FAILED_RESOURCE_ID, true);
     }
 
-    private function checkOn($key)
+    protected function checkOn($key, $warn = false)
     {
         $value = $this->modx->getOption('ms2_msp' . $key, null, '0');
         return $value == '1' || $value == "true";
+    }
+
+    /**
+     * Необходимо ли добавлять QR-код
+     * @return boolean
+     */
+    public function isQRCodeEnabled()
+    {
+        return $this->checkOn(ConfigurationFieldsModx::QR_CODE);
     }
 
     /**
@@ -194,7 +200,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function getEripPath()
     {
-        // TODO: не используется
+        return $this->getOption( ConfigurationFieldsModx::ERIP_PATH, true );
     }
 
     /**
@@ -206,8 +212,18 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
         return $this->getOption(ConfigurationFieldsModx::DUE_INTERVAL, true);
     }
 
+    public function createCmsRelatedKey($key) {
+        return $key;
+    }
+
+    public function isUseOrderNumber(){
+        return true;
+    }
+
     public function getOption($key, $warn = false)
     {
+        Logger::getLogger(get_class($this))->info("getOption ". 'ms2_msp' . $key);
+
         $value = $this->modx->getOption('ms2_msp' . $key, null, '');
         if ($warn)
             return $this->warnIfEmpty($value, $key);

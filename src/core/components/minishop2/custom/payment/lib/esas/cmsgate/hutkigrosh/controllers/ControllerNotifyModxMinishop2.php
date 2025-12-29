@@ -1,6 +1,6 @@
 <?php
 
-namespace esas\hutkigrosh\controllers;
+namespace esas\cmsgate\hutkigrosh\controllers;
 
 /**
  * Created by PhpStorm.
@@ -8,11 +8,12 @@ namespace esas\hutkigrosh\controllers;
  * Date: 22.03.2018
  * Time: 11:55
  */
-use esas\hutkigrosh\wrappers\ConfigurationWrapperModxMinishop2;
-use esas\hutkigrosh\wrappers\OrderWrapper;
-use esas\hutkigrosh\wrappers\OrderWrapperModxMinishop2;
+use esas\cmsgate\hutkigrosh\wrappers\ConfigurationWrapperModxMinishop2;
+use esas\cmsgate\hutkigrosh\wrappers\OrderWrapper;
+use esas\cmsgate\hutkigrosh\wrappers\OrderWrapperModxMinishop2;
+//use esas\cmsgate\hutkigrosh\controllers\ControllerHutkigroshNotify;
 
-class ControllerNotifyModxMinishop2 extends ControllerNotify
+class ControllerNotifyModxMinishop2 extends ControllerHutkigroshNotify
 {
     private $modx;
 

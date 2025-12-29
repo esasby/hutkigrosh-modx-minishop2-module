@@ -1,19 +1,17 @@
 <?php
 
-namespace esas\hutkigrosh\wrappers;
+namespace esas\cmsgate\hutkigrosh\wrappers;
 
 use miniShop2;
 use msOrder;
+//use esas\cmsgate\hutkigrosh\wrappers\OrderProductWrapperModxMinishop2;
+use esas\cmsgate\wrappers\OrderWrapper;
+use esas\cmsgate\utils\Logger;
 
-/**
- * Created by PhpStorm.
- * User: nikit
- * Date: 13.03.2018
- * Time: 14:51
- */
 class OrderWrapperModxMinishop2 extends OrderWrapper
 {
     private $order;
+    public $logger;
     /** @var miniShop2 $ms2 */
     private $ms;
 
@@ -25,6 +23,7 @@ class OrderWrapperModxMinishop2 extends OrderWrapper
     {
         $this->order = $order;
         $this->ms = $order->xpdo->getService('miniShop2');
+        $this->logger=Logger::getLogger(OrderWrapperModxMinishop2::class);
     }
 
 
@@ -99,7 +98,7 @@ class OrderWrapperModxMinishop2 extends OrderWrapper
 
     /**
      * Массив товаров в заказе
-     * @return \esas\hutkigrosh\wrappers\OrderProductWrapper[]
+     * @return \esas\cmsgate\hutkigrosh\wrappers\OrderProductWrapper[]
      */
     public function getProducts()
     {
@@ -146,6 +145,27 @@ class OrderWrapperModxMinishop2 extends OrderWrapper
     public function saveBillId($billId)
     {
         $this->order->set('properties', array('bill_id' => $billId));
+        $this->order->save();
+    }
+
+    public function getClientId()
+    {
+        // TODO: Implement getClientId() method.
+    }
+
+    public function getShippingAmount()
+    {
+        // TODO: Implement getShippingAmount() method.
+    }
+
+    public function getExtId()
+    {
+        return $this->order->get('properties')['bill_id'];
+    }
+
+    public function saveExtId($extId)
+    {
+        $this->order->set('properties', array('bill_id' => $extId));
         $this->order->save();
     }
 }
