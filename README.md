@@ -30,7 +30,8 @@
 
 ## Требования
 
-- PHP 5.6 и выше, расширение [cURL](https://www.php.net/manual/ru/book.curl.php)
+- Сборка API v3: PHP 7.0 и выше, расширения [cURL](https://www.php.net/manual/ru/book.curl.php) и json (версии PHP ограничены платформой: сборка проверена на MODX 2.8.8 + miniShop2 4.4.2, которому требуется PHP 7.0 и выше; сам модуль совместим с PHP 5.6)
+- Сборка предыдущего поколения: PHP 5.6 и выше, расширения [cURL](https://www.php.net/manual/ru/book.curl.php) и json
 
 ## Установка (одинакова для обеих версий модуля)
 
@@ -190,3 +191,7 @@ https://ваш-домен/assets/components/minishop2/payment/hutkigrosh.php?act
 ## Поддержка
 
 По вопросам подключения и работы сервиса обращайтесь в службу технической поддержки [ХуткiГрош](https://hutkigrosh.by).
+
+### Разработка
+
+1. Для удобства разработки отключить cache_lexicon_topics и cache_disabled
